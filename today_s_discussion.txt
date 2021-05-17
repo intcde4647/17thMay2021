@@ -1,0 +1,127 @@
+The approach of coding got changed in Java8.
+
+Imperative Programming
+is a programming technique that uses statements that change a program's state.
+
+
+Declarative Programming and Functional Programming:- If we talk about java 8 perspective. We are much more into 
+Declarative and Functional Programming. In this programming style our approach is pure mathematical function
+style. Its main focus is "what to solve" In contrast to imperative style where the main focus is "How to solve".
+
+One of the key step in functional programming is LAMBDA expression.
+
+What are the new things which got added in Java8?
+1) The approach of writing Interfaces got changed and we got a kind of interfaces which are called Functional
+   interfaces.
+2) LAMBDA Expression ( Functional intefaces)
+3) method referencing 
+4) More Date and time related classes got added with new capabilities.
+5) Stream API ( Stream is a new abstract layer introduced in Java8. Using stream we can process data in
+   a declarative way similar to SQL statements ) We have data in some collection which can be array
+   or collection framework related classes. That data we get it as stream and we process that data in declarative way.
+
+--------------------------------------------------------------------------------------------------------------- 
+      
+What are interfaces in Java
+    Interfaces are providing as with some rule or protocol in the form of abstract methods and when a class
+implementing an interface, it needs to override those abstract methods. 
+
+In Java we dont have the concept of multiple inheritance which means if we have class A,B,C and D
+
+class A{}
+class B{}
+class C{}
+
+class D extends A,B,C{}
+
+So the above approach is not permissible in Java.
+-----------------------------------------------------------------------------------------------------------
+Interfaces in a way solve that non availability of multiple inheritance in Java.
+
+* We cannot create an object of interface.
+* A class implementing an interface should override all the methods of the interface and if it not doing so 
+  declare the class as an abstract class.
+public interface Calculator {
+   int add(int a,int b);
+   int subtract(int a,int b);
+}
+
+
+
+
+package com.cts.demos1;
+
+
+
+public class Mynumber implements Calculator {
+
+	@Override
+	public int add(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int subtract(int a, int b) {
+		// TODO Auto-generated method stub
+	     return 0;
+	}
+
+}
+
+----------------------------------------------------------------------
+In the below code we missed overriding the subtract method so it will 
+give compilation error to avoid that declare the class as an abstract class.
+public  abstract class Mynumber implements Calculator {
+
+	@Override
+	public int add(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+-------------------------------------------------------------------------------------------------------
+Functional Interfaces
+
+* consist of single abstract method
+* can have any number of default and static methods
+* ex Comparator, Runnable, Comparable 
+
+
+}
+------------------------------------------------------------------------------------------------
+In Java 8 interfaces we can have methods of 3 types:
+ 1) abstract method
+ 2) default method/methods: is added for backward compatibility so that old interfaces can be used
+   to leverage the lambda expression capability of Java8. For example List,Collections interfaces
+   were not having forEach method declaration. Thus adding such method as an abstract method will
+   simply break the collection framework implementations.
+
+ In Collection  
+
+    Collection ( Interface)
+    List extends Collection ( Interface)
+    ArrayList implements List
+    LinkedList implements List
+
+   If forEach is being kept as an abstract method which means again the whole lot of implementation needs to be
+    changed.So to avoid that they have kept the forEach method as the default method and which is having
+    the implementation ( body) . So advantage is the class which is implementing the interface need not require
+    overriding this default method.
+3) We can write static methods . Again we dont override the static methods.
+4) We can have multiple static,default and abstract methods
+--------------------------------------------------------------------------------------------------------------
+Anonymous classes====> A class without a name.
+An Anonymous class should either extends some class or implement some interfaces.
+Local classes , the classes which are within a block or method
+
+Lambda expression
+    Lambda operator ->
+ 
+(parameters)->expression body.
+
+--------------------------------------------------------------------------------------------------------
+Interface in Java=====> Interfaces in Java8========> Functianal Interfaces ========> Lambda Expression
+Anonymous Classes.
+
+
+
